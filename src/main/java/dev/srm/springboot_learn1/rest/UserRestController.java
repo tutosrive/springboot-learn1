@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class UserRestController {
     private final UserService service = new UserService();
 
-
     @GetMapping
     public ArrayList<UserModel> getUsers() {
         return service.getAllUsers();

@@ -9,7 +9,7 @@ public class UserService {
     private final ArrayList<UserModel> users = new ArrayList<>();
 
     public UserService() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             UserModel user = new UserModel();
             this.users.add(user);
         }
