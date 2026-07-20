@@ -1,16 +1,38 @@
 package dev.srm.springboot_learn1.models;
 
+import dev.srm.springboot_learn1.utils.RandomUtils;
+
 public class UserModel {
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
     private int age;
 
-    public UserModel(String firstName, String lastName, String email, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.age = age;
+    public UserModel() {
+        this(
+                RandomUtils.getAtomicId(),
+                RandomUtils.getRandomFirstName(),
+                RandomUtils.getRandomLastName(),
+                RandomUtils.getRandomEmail(),
+                RandomUtils.getRandomInt(10, 75)
+        );
+    }
+
+    public UserModel(int id, String firstName, String lastName, String email, int age) {
+        this.setId(id);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEmail(email);
+        this.setAge(age);
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
